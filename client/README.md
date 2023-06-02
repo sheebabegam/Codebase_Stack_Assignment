@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Codebase Stack Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application for managing user data. It includes the following features:
 
-## Available Scripts
+1. A React component that displays a list of user names and email addresses. The component receives an array of user objects as a prop.
+2. Each user component has a ref attached to it, and clicking on a user element logs the ref to the console.
+3. A multi-step form in React that allows users to add a new user to the list. The form captures user information in two steps and allows users to go back and forth between the steps. The form includes fields for name, email, and password.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+Before running this application, make sure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js
+- React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/your-repo.git
+```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+cd project-directory
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install
+```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To start the application, run the following command in the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will start the development server and open the application in your default browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+### 1. UserList Component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This component displays a list of user names and email addresses. It receives an array of user objects as a prop.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. UserListWithRef Component
 
-### Code Splitting
+This component extends the `UserList` component and adds a ref to each user element. Clicking on a user element will log the ref to the console.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. AddUserForm Component
 
-### Analyzing the Bundle Size
+This component represents a multi-step form for adding a new user to the list. The form captures information in two steps and allows users to go back and forth between the steps. It includes fields for name, email, and password.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Code Example
 
-### Making a Progressive Web App
+Here's an example of how to use the components in your React application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```jsx
+import React, { useState, useEffect } from "react";
+import { useMutation, useQuery, gql } from "@apollo/client";
+import "bootstrap/dist/css/bootstrap.css";
+import AddUserForm from "./pages/AddUserForm";
+import UpdateUserForm from "./pages/UpdateUserForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ADD_USER_MUTATION, GET_USERS_QUERY, DELETE_USER_MUTATION } from './queries/userQuery'
+import UserList from "./sections/UserList";
 
-### Advanced Configuration
+const App = () => {
+  // Add your component code here...
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export default App;
+```
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
